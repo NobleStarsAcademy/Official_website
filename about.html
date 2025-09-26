@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Noble Stars Academy</title>
+    <meta name="description" content="Learn about Noble Stars Academy's history, mission, vision, and our dedicated team of educators in Ile-Ife, Osun State, Nigeria.">
+    <link rel="icon" type="image/x-icon" href="nsa.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fredoka+One&display=swap');
+        
+        :root {
+            --royal-blue: #1a237e;
+            --fuschia-pink: #e91e63;
+            --white: #ffffff;
+            --black: #212121;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--black);
+            overflow-x: hidden;
+        }
+        
+        .title-font {
+            font-family: 'Fredoka One', cursive;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--royal-blue) 0%, var(--fuschia-pink) 100%);
+        }
+        
+        .btn-primary {
+            background-color: var(--royal-blue);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0d47a1;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--fuschia-pink);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #c2185b;
+            transform: translateY(-2px);
+        }
+        
+        .text-royal-blue {
+            color: var(--royal-blue);
+        }
+        
+        .text-fuschia-pink {
+            color: var(--fuschia-pink);
+        }
+        
+        .bg-royal-blue {
+            background-color: var(--royal-blue);
+        }
+        
+        .bg-fuschia-pink {
+            background-color: var(--fuschia-pink);
+        }
+        
+        .border-royal-blue {
+            border-color: var(--royal-blue);
+        }
+        
+        .border-fuschia-pink {
+            border-color: var(--fuschia-pink);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--fuschia-pink);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active-nav::after {
+            width: 100%;
+            background-color: var(--royal-blue);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--fuschia-pink);
+            border: 4px solid white;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--royal-blue);
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Top Bar -->
+    <div class="bg-royal-blue text-white py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex space-x-4">
+                <a href="tel:+2348064148820" class="flex items-center text-sm hover:text-gray-200">
+                    <i data-feather="phone" class="w-4 h-4 mr-1"></i> +234 806 414 8820
+                </a>
+                <a href="mailto:noblestarsacademyschool@gmail.com" class="flex items-center text-sm hover:text-gray-200">
+                    <i data-feather="mail" class="w-4 h-4 mr-1"></i> noblestarsacademyschool@gmail.com
+                </a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="text-white hover:text-gray-200"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/noble_stars_academy?igsh=NjRxZnIzd2tmMDZn" class="text-white hover:text-gray-200"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/noble-stars-academy/" class="text-white hover:text-gray-200"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="nsa.png" alt="Noble Stars Academy Logo" class="h-12 mr-2">
+                <a href="index.html" class="title-font text-2xl font-bold text-royal-blue">Noble Stars Academy</a>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-black font-medium">Home</a>
+                <a href="about.html" class="nav-link active-nav text-black font-medium">About Us</a>
+                <a href="academics.html" class="nav-link text-black font-medium">Academics</a>
+                <a href="vocational.html" class="nav-link text-black font-medium">Vocational</a>
+                <a href="admissions.html" class="nav-link text-black font-medium">Admissions</a>
+                <a href="gallery.html" class="nav-link text-black font-medium">Gallery</a>
+                <a href="contact.html" class="nav-link text-black font-medium">Contact</a>
+                <a href="NSA PORTAL.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Portal</a>
+            </div>
+            
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full px-4 py-2 shadow-lg" id="mobile-menu">
+            <a href="index.html" class="block py-2 text-black font-medium border-b">Home</a>
+            <a href="about.html" class="block py-2 text-black font-medium border-b">About Us</a>
+            <a href="academics.html" class="block py-2 text-black font-medium border-b">Academics</a>
+            <a href="vocational.html" class="block py-2 text-black font-medium border-b">Vocational</a>
+            <a href="admissions.html" class="block py-2 text-black font-medium border-b">Admissions</a>
+            <a href="gallery.html" class="block py-2 text-black font-medium border-b">Gallery</a>
+            <a href="contact.html" class="block py-2 text-black font-medium border-b">Contact</a>
+            <a href="NSA PORTAL.html" class="block py-2 btn-primary rounded-md text-center font-medium my-2">Portal</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-r from-blue-200 to-pink-800 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="title-font text-4xl md:text-5xl font-bold mb-4 text-royal-blue" data-aos="fade-up">About Noble Stars Academy</h1>
+            <div class="w-24 h-1 bg-white mx-auto mb-6"></div>
+            <p class="text-xl max-w-3xl mx-auto text-royal-blue" data-aos="fade-up" data-aos-delay="100">Discover our story, mission, and the dedicated team that makes our school special.</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <div class="bg-gray-100 py-4">
+        <div class="container mx-auto px-4">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a href="index.html" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-fuschia-pink">
+                            <i data-feather="home" class="w-4 h-4 mr-2"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <i data-feather="chevron-right" class="w-4 h-4 text-gray-400"></i>
+                            <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">About Us</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Our Story -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <img src="story.png" alt="School Building" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+                    <h2 class="title-font text-3xl md:text-4xl font-bold mb-6 text-royal-blue">Our Story</h2>
+                    <p class="text-lg mb-6">Founded in 2017 with a vision to provide quality education in Ile-Ife, Noble Stars Academy has grown from humble beginnings to become a premier institution for early childhood and primary education in Osun State.</p>
+                    <p class="text-lg mb-6">Our journey began with a simple belief: every child deserves access to excellent education that nurtures their unique talents and prepares them for future success.</p>
+                    <p class="text-lg mb-8">Over the years, we've remained committed to our core values of excellence, integrity, and innovation, while continuously improving our facilities and curriculum to meet the evolving needs of our pupils.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="title-font text-3xl md:text-4xl font-bold mb-4 text-fuschia-pink">Our Mission & Vision</h2>
+                <div class="w-24 h-1 bg-royal-blue mx-auto mb-6"></div>
+                <p class="text-lg max-w-3xl mx-auto">Guiding principles that shape everything we do at Noble Stars Academy.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-royal-blue" data-aos="fade-up">
+                    <div class="bg-royal-blue text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="target" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl text-center mb-4">Our Mission</h3>
+                    <p class="text-gray-700 text-center">To provide a nurturing, stimulating learning environment that empowers each child to develop intellectually, socially, emotionally, and physically, while instilling strong moral values and a lifelong love of learning.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-fuschia-pink" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-fuschia-pink text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="eye" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl text-center mb-4">Our Vision</h3>
+                    <p class="text-gray-700 text-center">To be recognized as a leading educational institution that produces well-rounded, confident, and innovative young individuals who are prepared to excel in their future academic pursuits and make meaningful contributions to society.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="title-font text-3xl md:text-4xl font-bold mb-4 text-royal-blue">Our Core Values</h2>
+                <div class="w-24 h-1 bg-fuschia-pink mx-auto mb-6"></div>
+                <p class="text-lg max-w-3xl mx-auto">The foundational principles that guide our daily interactions and decisions.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-royal-blue bg-opacity-10 p-2 rounded-full mr-4">
+                            <i data-feather="award" class="text-royal-blue w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-xl">Excellence</h3>
+                    </div>
+                    <p class="text-gray-600">We strive for the highest standards in all aspects of education, from teaching to facilities, ensuring our pupils receive the best possible foundation.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-fuschia-pink bg-opacity-10 p-2 rounded-full mr-4">
+                            <i data-feather="heart" class="text-fuschia-pink w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-xl">Integrity</h3>
+                    </div>
+                    <p class="text-gray-600">We cultivate honesty, responsibility, and strong moral character in our pupils, preparing them to make ethical decisions throughout their lives.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-royal-blue bg-opacity-10 p-2 rounded-full mr-4">
+                            <i data-feather="users" class="text-royal-blue w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-xl">Respect</h3>
+                    </div>
+                    <p class="text-gray-600">We foster an environment of mutual respect where diversity is celebrated, and each individual's unique qualities are valued and nurtured.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-fuschia-pink bg-opacity-10 p-2 rounded-full mr-4">
+                            <i data-feather="zap" class="text-fuschia-pink w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-xl">Innovation</h3>
+                    </div>
+                    <p class="text-gray-600">We embrace creative teaching methods and technologies to make learning engaging and relevant to our rapidly changing world.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-royal-blue bg-opacity-10 p-2 rounded-full mr-4">
+                            <i data-feather="home" class="text-royal-blue w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-xl">Community</h3>
+                    </div>
+                    <p class="text-gray-600">We build strong partnerships with families and the local community to create a supportive network that enhances our pupils' growth.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-fuschia-pink bg-opacity-10 p-2 rounded-full mr-4">
+                            <i data-feather="smile" class="text-fuschia-pink w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-xl">Joy</h3>
+                    </div>
+                    <p class="text-gray-600">We believe learning should be fun and inspiring, creating an atmosphere where children develop a lifelong love for discovery and knowledge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="title-font text-3xl md:text-4xl font-bold mb-4 text-fuschia-pink">Meet Our Team</h2>
+                <div class="w-24 h-1 bg-royal-blue mx-auto mb-6"></div>
+                <p class="text-lg max-w-3xl mx-auto">Our dedicated educators and staff who make Noble Stars Academy special.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="team-card bg-white rounded-xl overflow-hidden shadow-md transition" data-aos="fade-up">
+                    <img src="proprietress.jpg" alt="Proprietress" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-1">Mrs. S.I. Abegunde</h3>
+                        <p class="text-fuschia-pink font-medium mb-4">Proprietress</p>
+                        <p class="text-gray-600">With over 20 years of experience in education, Mrs. Abegunde together with her husband, Prof. Abegunde founded Noble Stars Academy with a vision to transform early childhood education in Nigeria.</p>
+                    </div>
+                </div>
+                
+                <div class="team-card bg-white rounded-xl overflow-hidden shadow-md transition" data-aos="fade-up" data-aos-delay="100">
+                    <img src="salawu.jpg" alt="Head Teacher" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-1">Mrs. Salawu</h3>
+                        <p class="text-fuschia-pink font-medium mb-4">Nursery Coordinator</p>
+                        <p class="text-gray-600">Mrs. Salawu is an experienced and supportive leader who ensures a nurturing, engaging, and well-structured learning environment for our youngest learners.</p>
+                    </div>
+                </div>
+                
+                <div class="team-card bg-white rounded-xl overflow-hidden shadow-md transition" data-aos="fade-up" data-aos-delay="200">
+                    <img src="egbuna.jpg" alt="Nursery Coordinator" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-1">Mrs. Egbuna</h3>
+                        <p class="text-fuschia-pink font-medium mb-4">Kindergarten Coordinator</p>
+                        <p class="text-gray-600">Mrs. Egbuna is a dedicated and caring leader who guides the kindergarten team and fosters a strong learning foundation for every child.</p>
+                    </div>
+                </div>
+
+                <div class="team-card bg-white rounded-xl overflow-hidden shadow-md transition" data-aos="fade-up" data-aos-delay="200">
+                    <img src="ibrahim.jpg" alt="Nursery Coordinator" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-1">Mrs. Ibrahim</h3>
+                        <p class="text-fuschia-pink font-medium mb-4">Lower Primary Coordinator</p>
+                        <p class="text-gray-600">Mrs. Ibrahim is a dedicated coordinator who supports teachers and pupils in building strong academic and personal foundations.</p>
+                    </div>
+                </div>
+            
+                <div class="team-card bg-white rounded-xl overflow-hidden shadow-md transition" data-aos="fade-up" data-aos-delay="200">
+                    <img src="esther.jpg" alt="Nursery Coordinator" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-1">Miss. Esther Omini</h3>
+                        <p class="text-fuschia-pink font-medium mb-4">Upper Primary Coordinator</p>
+                        <p class="text-gray-600">Miss Omini is an inspiring leader who guides the upper primary team to promote excellence, confidence, and growth in every child.</p>
+                    </div>
+                </div>
+            
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- School Levels -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="title-font text-3xl md:text-4xl font-bold mb-4 text-royal-blue">Our School Levels</h2>
+                <div class="w-24 h-1 bg-fuschia-pink mx-auto mb-6"></div>
+                <p class="text-lg max-w-3xl mx-auto">Comprehensive educational programs tailored to each developmental stage.</p>
+            </div>
+            
+            <div class="relative pl-8 timeline">
+                <div class="mb-12 relative timeline-item" data-aos="fade-right">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-xl text-fuschia-pink mb-2">Creche (6months - 3years)</h3>
+                        <p class="text-gray-700">Our creche provides a safe, nurturing environment for our youngest learners. With a low child-to-caregiver ratio, we focus on sensory stimulation, early motor skills development, and creating a loving atmosphere that feels like a home away from home.</p>
+                    </div>
+                </div>
+                
+                <div class="mb-12 relative timeline-item" data-aos="fade-right" data-aos-delay="100">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-xl text-fuschia-pink mb-2">Nursery (Nursery 1 & 2)</h3>
+                        <p class="text-gray-700">Our nursery program introduces structured learning through play. We focus on developing social skills, early literacy, numeracy, and creative expression. The curriculum includes circle time, story sessions, arts and crafts, music, and movement activities.</p>
+                    </div>
+                </div>
+                
+                <div class="mb-12 relative timeline-item" data-aos="fade-right" data-aos-delay="200">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-xl text-fuschia-pink mb-2">Kindergarten (KG 1 & 2)</h3>
+                        <p class="text-gray-700">Kindergarten builds foundational academic skills while fostering curiosity and independence. Our program emphasizes phonics-based reading, number concepts, science exploration, and problem-solving. Children begin more structured learning while still enjoying plenty of hands-on activities.</p>
+                    </div>
+                </div>
+                
+                <div class="relative timeline-item" data-aos="fade-right" data-aos-delay="300">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-xl text-fuschia-pink mb-2">Primary (Primary 1-5)</h3>
+                        <p class="text-gray-700">Our primary program offers a robust curriculum that challenges pupils academically while developing critical thinking and leadership skills. Subjects include English, Mathematics, Science, Social Studies, ICT, French, Yoruba, and more. We prepare pupils for secondary school entrance exams while nurturing well-rounded individuals.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="academics.html" class="btn-secondary px-6 py-3 rounded-md text-lg font-medium inline-block">Learn About Our Curriculum</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-royal-blue text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="title-font text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">Ready to Join Our School?</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">Give your child the gift of quality education in a nurturing environment that fosters growth and excellence.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="admissions.html" class="btn-secondary px-8 py-4 rounded-md text-lg font-medium">Apply Now</a>
+                <a href="contact.html" class="bg-white text-royal-blue px-8 py-4 rounded-md text-lg font-medium hover:bg-gray-100 transition">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="nsa.png" alt="Noble Stars Academy Logo" class="h-10 mr-2">
+                        <span class="title-font text-xl font-bold">Noble Stars Academy</span>
+                    </div>
+                    <p class="mb-4">Soaring to Shine and Reign</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-fuschia-pink"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/noble_stars_academy?igsh=NjRxZnIzd2tmMDZn" class="text-white hover:text-fuschia-pink"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/noble-stars-academy/" class="text-white hover:text-fuschia-pink"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-fuschia-pink transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-fuschia-pink transition">About Us</a></li>
+                        <li><a href="academics.html" class="hover:text-fuschia-pink transition">Academics</a></li>
+                        <li><a href="vocational.html" class="hover:text-fuschia-pink transition">Vocational</a></li>
+                        <li><a href="admissions.html" class="hover:text-fuschia-pink transition">Admissions</a></li>
+                        <li><a href="contact.html" class="hover:text-fuschia-pink transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Programs</h3>
+                    <ul class="space-y-2">
+                        <li><a href="academics.html" class="hover:text-fuschia-pink transition">Creche</a></li>
+                        <li><a href="academics.html" class="hover:text-fuschia-pink transition">Nursery</a></li>
+                        <li><a href="academics.html" class="hover:text-fuschia-pink transition">Kindergarten</a></li>
+                        <li><a href="academics.html" class="hover:text-fuschia-pink transition">Primary</a></li>
+                        <li><a href="academics.html" class="hover:text-fuschia-pink transition">Vocational</a></li>
+                        <li><a href="academics.html" class="hover:text-fuschia-pink transition">Extracurricular</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Contact Us</h3>
+                    <address class="not-italic">
+                        <p class="mb-2 flex items-center">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i> No 33, Adedoyin Way, Beside Old Nitel, Parakin, Ile-Ife, Osun State
+                        </p>
+                        <p class="mb-2 flex items-center">
+                            <i data-feather="phone" class="w-4 h-4 mr-2"></i> +234 806 414 8820
+                        </p>
+                        <p class="flex items-center">
+                            <i data-feather="mail" class="w-4 h-4 mr-2"></i> noblestarsacademyschool@gmail.com
+                        </p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 text-center text-sm text-gray-400">
+                <p>&copy; 2025 Noble Stars Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Initialize animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Feather icons
+        feather.replace();
+    </script>
+</body>
+</html>

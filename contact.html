@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact Us - Noble Stars Academy</title>
+    <meta name="description" content="We'd love to hear from you. Reach out to Noble Stars Academy">
+    <link rel="icon" type="image/x-icon" href="nsa.png">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS (animations) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Feather icons (single include) -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fredoka+One&display=swap');
+        .font-fredoka { font-family: 'Fredoka One', cursive; }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        :root {
+            --royal-blue: #1a237e;   /* your royal-blue */
+            --fuschia-pink: #e91e63; /* your fuschia-pink */
+            --white: #ffffff;
+            --black: #212121;
+        }
+
+        /* Base */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--black);
+            overflow-x: hidden;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+
+        .title-font { font-family: 'Fredoka One', cursive; }
+
+        /* Reused utilities using your variables for consistency */
+        .text-royal-blue { color: var(--royal-blue); }
+        .text-fuschia-pink { color: var(--fuschia-pink); }
+        .bg-royal-blue { background-color: var(--royal-blue); }
+        .bg-fuschia-pink { background-color: var(--fuschia-pink); }
+        .border-royal-blue { border-color: var(--royal-blue); }
+        .border-fuschia-pink { border-color: var(--fuschia-pink); }
+
+        .btn-primary {
+            background-color: var(--royal-blue);
+            color: white;
+            transition: all 0.25s ease;
+        }
+        .btn-primary:hover { background-color: #0d47a1; transform: translateY(-2px); }
+
+        .btn-secondary {
+            background-color: var(--fuschia-pink);
+            color: white;
+            transition: all 0.25s ease;
+        }
+        .btn-secondary:hover { background-color: #c2185b; transform: translateY(-2px); }
+
+        /* Nav underline animation */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -6px;
+            left: 0;
+            background-color: var(--fuschia-pink);
+            transition: width 0.25s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+        /* active - uses royal blue underline in your original */
+        .active-nav::after { width: 100%; background-color: var(--royal-blue); }
+
+        /* Small helpers for visibility */
+        h2, h3 { color: var(--royal-blue); }
+        h3.fuschia { color: var(--fuschia-pink); }
+
+        /* Cards / animations */
+        .curriculum-card { transition: all 0.28s ease; }
+        .curriculum-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+
+        .fade-in { opacity: 0; transform: translateY(18px); transition: all 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Preserve sticky nav look */
+        .sticky-nav { position: sticky; top: 0; z-index: 60; backdrop-filter: blur(8px); }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Top Bar (your exact structure) -->
+    <div class="bg-royal-blue text-white py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex space-x-4">
+                <a href="tel:+2348064148820" class="flex items-center text-sm hover:text-gray-200">
+                    <i data-feather="phone" class="w-4 h-4 mr-1"></i> +234 806 414 8820
+                </a>
+                <a href="mailto:noblestarsacademyschool@gmail.com" class="flex items-center text-sm hover:text-gray-200">
+                    <i data-feather="mail" class="w-4 h-4 mr-1"></i> noblestarsacademyschool@gmail.com
+                </a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="text-white hover:text-gray-200"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/noble_stars_academy?igsh=NjRxZnIzd2tmMDZn" class="text-white hover:text-gray-200"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/noble-stars-academy/" class="text-white hover:text-gray-200"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation (your exact structure, 'Academics' marked active) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="nsa.png" alt="Noble Stars Academy Logo" class="h-12 mr-2">
+                <a href="index.html" class="title-font text-2xl font-bold text-royal-blue">Noble Stars Academy</a>
+            </div>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-black font-medium">Home</a>
+                <a href="about.html" class="nav-link text-black font-medium">About Us</a>
+                <a href="academics.html" class="nav-link text-black font-medium">Academics</a>
+                <a href="vocational.html" class="nav-link text-black font-medium">Vocational</a>
+                <a href="admissions.html" class="nav-link text-black font-medium">Admissions</a>
+                <a href="gallery.html" class="nav-link text-black font-medium">Gallery</a>
+                <a href="contact.html" class="nav-link active-nav text-black font-medium">Contact</a>
+                <a href="NSA PORTAL.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Portal</a>
+            </div>
+
+            <button class="md:hidden focus:outline-none text-royal-blue" id="menu-toggle">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full px-4 py-2 shadow-lg" id="mobile-menu">
+            <a href="index.html" class="block py-2 text-black font-medium border-b">Home</a>
+            <a href="about.html" class="block py-2 text-black font-medium border-b">About Us</a>
+            <a href="academics.html" class="block py-2 text-black font-medium border-b">Academics</a>
+            <a href="vocational.html" class="block py-2 text-black font-medium border-b">Vocational</a>
+            <a href="admissions.html" class="block py-2 text-black font-medium border-b">Admissions</a>
+            <a href="gallery.html" class="block py-2 text-black font-medium border-b">Gallery</a>
+            <a href="contact.html" class="block py-2 text-black font-medium border-b">Contact</a>
+            <a href="NSA PORTAL.html" class="block py-2 btn-primary rounded-md text-center font-medium my-2">Portal</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-royal-blue text-white py-16">
+            <div class="container mx-auto px-6 text-center fade-in">
+                <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4 text-white">Get In Touch</h2>
+                <p class="text-xl max-w-2xl mx-auto">We'd love to hear from you. Reach out to Noble Stars Academy through any of the channels below.</p>
+            </div>
+        </section>
+
+        <!-- Contact Content -->
+        <section id="contact" class="py-16">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Information -->
+                    <div class="fade-in">
+                        <h3 class="font-heading text-2xl font-bold text-royal-blue mb-6">Contact Information</h3>
+                        
+                        <div class="mb-8">
+                            <h4 class="font-heading font-semibold text-lg mb-2">Address</h4>
+                            <p class="mb-4">No 33, Adedoyin Way, Beside Old Nitel, Parakin, Ile-Ife, Osun State, Nigeria</p>
+                            <div class="rounded-lg overflow-hidden shadow-lg h-64">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.802625441424!2d4.5379191!3d7.4948862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103837368d919bcd%3A0x496fa153bbdea861!2sNOBLE%20STARS%20ACADEMY!5e0!3m2!1sen!2sng!4v1727273562923!5m2!1sen!2sng" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="font-heading font-semibold text-lg mb-2">Phone & Email</h4>
+                            <div class="flex items-center mb-3">
+                                <i data-feather="phone" class="mr-3 text-royal-blue"></i>
+                                <a href="tel:+2348064148820" class="hover:text-royal-blue transition-colors">+2348064148820</a>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-feather="mail" class="mr-3 text-royal-blue"></i>
+                                <a href="mailto:noblestarsacademyschool@gmail.com" class="hover:text-royal-blue transition-colors">noblestarsacademyschool@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-heading font-semibold text-lg mb-2">Connect With Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-royal-blue text-white p-3 rounded-full hover:bg-fuschia-pink transition-colors btn-hover">
+                                    <i data-feather="facebook"></i>
+                                </a>
+                                <a href="https://www.instagram.com/noble_stars_academy?igsh=NjRxZnIzd2tmMDZn" class="bg-royal-blue text-white p-3 rounded-full hover:bg-fuschia-pink transition-colors btn-hover">
+                                    <i data-feather="instagram"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/company/noble-stars-academy/" class="bg-royal-blue text-white p-3 rounded-full hover:bg-fuschia-pink transition-colors btn-hover">
+                                    <i data-feather="linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="fade-in">
+                        <h3 class="font-heading text-2xl font-bold text-royal-blue mb-6">Send Us a Message</h3>
+                        <form action="https://formsubmit.co/noblestarsacademyschool@gmail.com" method="POST" class="space-y-6">
+          <!-- To prevent spam -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="thankyou.html">
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-royal-blue focus:border-transparent transition-all">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-royal-blue focus:border-transparent transition-all">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-royal-blue focus:border-transparent transition-all">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium mb-2">Your Message</label>
+                                <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-royal-blue focus:border-transparent transition-all"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-fuschia-pink text-white font-heading font-semibold py-3 px-6 rounded-lg btn-hover flex items-center justify-center">
+                                Send Message
+                                <i data-feather="send" class="ml-2"></i>
+                            </button>
+                            
+                            <div id="formMessage" class="hidden p-4 rounded-lg text-center"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+    <section class="bg-fuschia-pink text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Begin the Admission Process?</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-8">Give your child the gift of quality education at Noble Stars Academy</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="admissions.html" class="btn-primary inline-flex items-center justify-center px-8 py-3 rounded-md text-lg font-medium">
+                    <i data-feather="edit" class="mr-2"></i>
+                    Start Application
+                </a>
+                <a href="#contact" class="bg-white text-pink-600 inline-flex items-center justify-center px-8 py-3 rounded-md text-lg font-medium border border-white hover:bg-fuschia-pink transition duration-300">
+                    <i data-feather="phone" class="mr-2"></i>
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="nsa.png" alt="Noble Stars Academy Logo" class="h-10 w-10 mr-3">
+                        <h3 class="font-heading text-xl font-bold">Noble Stars Academy</h3>
+                    </div>
+                    <p class="playful-text text-fuschia-pink mb-4">Soaring to Shine and Reign</p>
+                    <p class="text-sm">Providing quality education for the leaders of tomorrow.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-heading font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-fuschia-pink">Home</a></li>
+            <li><a href="about.html" class="hover:text-fuschia-pink">About Us</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Academics</a></li>
+            <li><a href="vocational.html" class="hover:text-fuschia-pink">Vocational</a></li>
+            <li><a href="admissions.html" class="hover:text-fuschia-pink">Admissions</a></li>
+            <li><a href="contact.html" class="hover:text-fuschia-pink">Contact</a></li>
+          </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-heading font-semibold mb-4">Contact Info</h4>
+                    <address class="not-italic text-gray-400">
+                        <p class="mb-2">No 33, Adedoyin Way, Beside Old Nitel</p>
+                        <p class="mb-2">Parakin, Ile-Ife, Osun State, Nigeria</p>
+                        <p class="mb-2">+2348064148820</p>
+                        <p>noblestarsacademyschool@gmail.com</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>© 2025 Noble Stars Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Feather Icons
+        feather.replace();
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+        
+        // Scroll animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOptions = {
+                threshold: 0.3,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const fadeInObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, fadeInOptions);
+            
+            fadeElements.forEach(element => {
+                fadeInObserver.observe(element);
+            });
+            
+            // Form submission
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(contactForm);
+                const name = formData.get('name');
+                const email = formData.get('email');
+                const phone = formData.get('phone');
+                const message = formData.get('message');
+                
+                // Simple validation
+                if (!name || !email || !message) {
+                    showMessage('Please fill in all required fields.', 'error');
+                    return;
+                }
+                
+                // Send email (using FormSubmit or similar service)
+                // For demo purposes, we'll simulate a successful submission
+                setTimeout(() => {
+                    showMessage('Your message has been sent successfully! We will get back to you soon.', 'success');
+                    contactForm.reset();
+                }, 1000);
+            });
+            
+            function showMessage(text, type) {
+                formMessage.textContent = text;
+                formMessage.classList.remove('hidden');
+                
+                if (type === 'success') {
+                    formMessage.classList.add('bg-green-100', 'text-green-700');
+                    formMessage.classList.remove('bg-red-100', 'text-red-700');
+                } else {
+                    formMessage.classList.add('bg-red-100', 'text-red-700');
+                    formMessage.classList.remove('bg-green-100', 'text-green-700');
+                }
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.classList.add('hidden');
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noble Stars Academy - Soaring to Shine and Reign</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #ff00a6 0%, #4b0082 100%);
+        }
+        .text-fuchsia {
+            color: #ff00a6;
+        }
+        .bg-fuchsia {
+            background-color: #ff00a6;
+        }
+        .border-fuchsia {
+            border-color: #ff00a6;
+        }
+        .text-royal-blue {
+            color: #4169e1;
+        }
+        .bg-royal-blue {
+            background-color: #4169e1;
+        }
+        .border-royal-blue {
+            border-color: #4169e1;
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.03);
+        }
+        .sport-girl {
+            background-color: #ffb6c1;
+        }
+        .sport-boy {
+            background-color: #87ceeb;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-fuchsia-500 to-blue-500 flex items-center justify-center text-white font-bold text-xl mr-3">NSA</div>
+                <h1 class="text-xl font-bold text-gray-800">Noble Stars Academy</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-fuchsia-600 font-medium">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-fuchsia-600 font-medium">About</a>
+                <a href="#programs" class="text-gray-700 hover:text-fuchsia-600 font-medium">Programs</a>
+                <a href="#gallery" class="text-gray-700 hover:text-fuchsia-600 font-medium">Gallery</a>
+                <a href="#contact" class="text-gray-700 hover:text-fuchsia-600 font-medium">Contact</a>
+            </nav>
+            <button class="md:hidden text-gray-700" id="menu-toggle">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full py-2 px-4 shadow-md" id="mobile-menu">
+            <a href="#home" class="block py-2 text-gray-700 hover:text-fuchsia-600">Home</a>
+            <a href="#about" class="block py-2 text-gray-700 hover:text-fuchsia-600">About</a>
+            <a href="#programs" class="block py-2 text-gray-700 hover:text-fuchsia-600">Programs</a>
+            <a href="#gallery" class="block py-2 text-gray-700 hover:text-fuchsia-600">Gallery</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-fuchsia-600">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Noble Stars Academy</h1>
+                <p class="text-xl mb-6">"Soaring to Shine and Reign"</p>
+                <p class="text-lg mb-8">Providing quality education in a nurturing environment for children in Ile-Ife, Osun State.</p>
+                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="bg-white text-fuchsia-600 hover:bg-gray-100 font-bold py-3 px-6 rounded-full text-center transition duration-300">Enquire Now</a>
+                    <a href="#programs" class="border-2 border-white hover:bg-white hover:text-fuchsia-600 font-bold py-3 px-6 rounded-full text-center transition duration-300">Our Programs</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-full max-w-md">
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-yellow-300 rounded-full opacity-20"></div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-300 rounded-full opacity-20"></div>
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="School Building" 
+                         class="relative rounded-xl shadow-2xl w-full hover-scale">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">About Our School</h2>
+            
+            <div class="flex flex-col md:flex-row items-center mb-12">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h3 class="text-2xl font-bold mb-4 text-fuchsia-600">Our Story</h3>
+                    <p class="text-gray-700 mb-4">Noble Stars Academy was founded with a vision to provide exceptional early childhood and primary education in Ile-Ife, Osun State. Located at No33 Adedoyin Way, beside Old Nitel, Parakin, our institution is committed to nurturing young minds to reach their full potential.</p>
+                    <p class="text-gray-700">Our motto "Soaring to Shine and Reign" reflects our commitment to helping every child discover their unique talents and develop the skills needed to excel in life.</p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" 
+                         alt="Students in classroom" 
+                         class="rounded-xl shadow-lg w-full hover-scale">
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row-reverse items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pl-8">
+                    <h3 class="text-2xl font-bold mb-4 text-royal-blue">Our Leadership</h3>
+                    <div class="mb-6">
+                        <h4 class="font-bold text-gray-800">Proprietress - Mrs. S.I. Abegunde</h4>
+                        <p class="text-gray-700">Holder of BSc in Agricultural Extension from Joseph Ayo Babalola University, MSc in Agricultural Extension from Obafemi Awolowo University, and postgraduate studies in Education.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800">Founder - Prof. Abegunde Albert</h4>
+                        <p class="text-gray-700">Lecturer at Obafemi Awolowo University with BSc, MSc, and PhD from the same institution, plus graduate studies in the Netherlands.</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
+                         alt="Teacher with students" 
+                         class="rounded-xl shadow-lg w-full hover-scale">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Our Educational Programs</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Nursery Program -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-scale">
+                    <div class="h-48 bg-gradient-to-r from-fuchsia-500 to-blue-500 flex items-center justify-center">
+                        <i class="fas fa-baby text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-fuchsia-600">Nursery Program</h3>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Nursery 1 (Age 2-3)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Nursery 2 (Age 3-4)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Play-based learning</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Early literacy & numeracy</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Kindergarten Program -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-scale">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-fuchsia-500 flex items-center justify-center">
+                        <i class="fas fa-child text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-royal-blue">Kindergarten Program</h3>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Kindergarten 1 (Age 4-5)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Kindergarten 2 (Age 5-6)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Foundational skills development</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Creative expression</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Primary Program -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-scale">
+                    <div class="h-48 bg-gradient-to-r from-fuchsia-500 via-blue-500 to-fuchsia-500 flex items-center justify-center">
+                        <i class="fas fa-school text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-fuchsia-600">Primary Program</h3>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Primary 1-5 (Age 6-11)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Core academic subjects</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Computer literacy</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Character development</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold mb-4 text-center text-gray-800">Our Unique Approach</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-fuchsia-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-brain text-fuchsia-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Holistic Development</h4>
+                        <p class="text-gray-700 text-sm">We nurture intellectual, physical, social, and emotional growth.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-laptop-code text-blue-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Technology Integration</h4>
+                        <p class="text-gray-700 text-sm">Modern computer lab to prepare students for the digital age.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-fuchsia-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-heart text-fuchsia-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Character Education</h4>
+                        <p class="text-gray-700 text-sm">We instill values of integrity, respect, and responsibility.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Life at Noble Stars</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- School Building -->
+                <div class="rounded-xl overflow-hidden shadow-lg hover-scale">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="School Building" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-gray-50">
+                        <h3 class="font-bold text-gray-800">Our Beautiful Campus</h3>
+                        <p class="text-gray-700 text-sm">Located at No33 Adedoyin Way, beside Old Nitel, Parakin, Ile-Ife</p>
+                    </div>
+                </div>
+                
+                <!-- Classroom -->
+                <div class="rounded-xl overflow-hidden shadow-lg hover-scale">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" 
+                         alt="Students in classroom" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-gray-50">
+                        <h3 class="font-bold text-gray-800">Interactive Learning</h3>
+                        <p class="text-gray-700 text-sm">Engaging classroom experiences for all students</p>
+                    </div>
+                </div>
+                
+                <!-- Computer Lab -->
+                <div class="rounded-xl overflow-hidden shadow-lg hover-scale">
+                    <img src="https://images.unsplash.com/photo-1544396821-4dd40b938ad3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" 
+                         alt="Students in computer lab" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-gray-50">
+                        <h3 class="font-bold text-gray-800">Technology Education</h3>
+                        <p class="text-gray-700 text-sm">Students developing digital literacy skills</p>
+                    </div>
+                </div>
+                
+                <!-- Sports -->
+                <div class="rounded-xl overflow-hidden shadow-lg hover-scale">
+                    <img src="https://images.unsplash.com/photo-1541534741688-6078c6efb583?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Students playing sports" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-gray-50">
+                        <h3 class="font-bold text-gray-800">Sports Activities</h3>
+                        <p class="text-gray-700 text-sm">Girls in pink and boys in sky blue sportswear</p>
+                    </div>
+                </div>
+                
+                <!-- Assembly -->
+                <div class="rounded-xl overflow-hidden shadow-lg hover-scale">
+                    <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                         alt="Students at assembly" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-gray-50">
+                        <h3 class="font-bold text-gray-800">Morning Assembly</h3>
+                        <p class="text-gray-700 text-sm">Students gathered for daily assembly</p>
+                    </div>
+                </div>
+                
+                <!-- Toddlers Eating -->
+                <div class="rounded-xl overflow-hidden shadow-lg hover-scale">
+                    <img src="https://images.unsplash.com/photo-1583295125721-b9ab18a5e4f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Toddlers eating" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-gray-50">
+                        <h3 class="font-bold text-gray-800">Nursery Care</h3>
+                        <p class="text-gray-700 text-sm">Our youngest students enjoying meal time</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gradient-to-r from-fuchsia-50 to-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">What Parents Say</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md hover-scale">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 mr-4">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Mrs. Adebayo</h4>
+                            <p class="text-sm text-gray-600">Parent of Primary 3 Student</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Noble Stars Academy has transformed my child's learning experience. The teachers are dedicated and the curriculum is excellent."</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md hover-scale">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Mr. Ojo</h4>
+                            <p class="text-sm text-gray-600">Parent of Kindergarten 2 Student</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The school's approach to early childhood education is outstanding. My daughter looks forward to school every day."</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md hover-scale">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 mr-4">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Mrs. Johnson</h4>
+                            <p class="text-sm text-gray-600">Parent of Nursery 1 Student</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The care and attention given to the youngest students is remarkable. I feel completely at ease leaving my child here."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Contact Us</h2>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h3 class="text-2xl font-bold mb-4 text-fuchsia-600">Get in Touch</h3>
+                    <p class="text-gray-700 mb-6">We'd love to hear from you! Reach out for admissions information, school tours, or any questions you may have.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Address</h4>
+                                <p class="text-gray-700">No33 Adedoyin Way, beside Old Nitel, Parakin, Ile-Ife, Osun state, Nigeria</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Phone</h4>
+                                <p class="text-gray-700">+234 806 414 8820</p>
+                                <p class="text-gray-700">+234 803 374 2755</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 mr-4">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">WhatsApp</h4>
+                                <p class="text-gray-700">+234 806 414 8820</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Email</h4>
+                                <p class="text-gray-700">noblestarsacademy@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold text-gray-800 mb-3">School Hours</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex justify-between py-2 border-b border-gray-200">
+                                <span class="text-gray-700">Monday - Friday</span>
+                                <span class="font-medium">7:30 AM - 2:00 PM</span>
+                            </div>
+                            <div class="flex justify-between py-2">
+                                <span class="text-gray-700">Saturday - Sunday</span>
+                                <span class="font-medium">Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-bold mb-4 text-royal-blue">Send Us a Message</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fuchsia-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fuchsia-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fuchsia-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="child" class="block text-gray-700 font-medium mb-2">Child's Grade of Interest</label>
+                                <select id="child" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fuchsia-500">
+                                    <option value="">Select grade</option>
+                                    <option value="nursery1">Nursery 1</option>
+                                    <option value="nursery2">Nursery 2</option>
+                                    <option value="kg1">Kindergarten 1</option>
+                                    <option value="kg2">Kindergarten 2</option>
+                                    <option value="primary1">Primary 1</option>
+                                    <option value="primary2">Primary 2</option>
+                                    <option value="primary3">Primary 3</option>
+                                    <option value="primary4">Primary 4</option>
+                                    <option value="primary5">Primary 5</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fuchsia-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-gradient-to-r from-fuchsia-500 to-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition duration-300">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-fuchsia-500 to-blue-500 flex items-center justify-center text-white font-bold text-lg mr-3">NSA</div>
+                        <h3 class="text-xl font-bold">Noble Stars Academy</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">"Soaring to Shine and Reign"</p>
+                    <p class="text-gray-400">Providing quality education in a nurturing environment for children in Ile-Ife, Osun State.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-white transition duration-300">Programs</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition duration-300">Gallery</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Programs</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Nursery</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Kindergarten</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Primary</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">After School Care</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-fuchsia-600 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-blue-400 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-pink-600 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-green-500 transition duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400">Subscribe to our newsletter</p>
+                    <div class="flex mt-2">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 bg-gray-800 text-white rounded-l-lg focus:outline-none w-full">
+                        <button class="bg-fuchsia-600 hover:bg-fuchsia-700 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 Noble Stars Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Academics - Noble Stars Academy</title>
+    <meta name="description" content="Our comprehensive curriculum is designed to nurture young minds and prepare them for a bright future">
+    <link rel="icon" type="image/x-icon" href="nsa.png">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS (animations) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Feather icons (single include) -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fredoka+One&display=swap');
+
+        :root {
+            --royal-blue: #1a237e;   /* your royal-blue */
+            --fuschia-pink: #e91e63; /* your fuschia-pink */
+            --white: #ffffff;
+            --black: #212121;
+        }
+
+        /* Base */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--black);
+            overflow-x: hidden;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+
+        .title-font { font-family: 'Fredoka One', cursive; }
+
+        /* Reused utilities using your variables for consistency */
+        .text-royal-blue { color: var(--royal-blue); }
+        .text-fuschia-pink { color: var(--fuschia-pink); }
+        .bg-royal-blue { background-color: var(--royal-blue); }
+        .bg-fuschia-pink { background-color: var(--fuschia-pink); }
+        .border-royal-blue { border-color: var(--royal-blue); }
+        .border-fuschia-pink { border-color: var(--fuschia-pink); }
+
+        .btn-primary {
+            background-color: var(--royal-blue);
+            color: white;
+            transition: all 0.25s ease;
+        }
+        .btn-primary:hover { background-color: #0d47a1; transform: translateY(-2px); }
+
+        .btn-secondary {
+            background-color: var(--fuschia-pink);
+            color: white;
+            transition: all 0.25s ease;
+        }
+        .btn-secondary:hover { background-color: #c2185b; transform: translateY(-2px); }
+
+        /* Nav underline animation */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -6px;
+            left: 0;
+            background-color: var(--fuschia-pink);
+            transition: width 0.25s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+        /* active - uses royal blue underline in your original */
+        .active-nav::after { width: 100%; background-color: var(--royal-blue); }
+
+        /* Small helpers for visibility */
+        h2, h3 { color: var(--royal-blue); }
+        h3.fuschia { color: var(--fuschia-pink); }
+
+        /* Cards / animations */
+        .curriculum-card { transition: all 0.28s ease; }
+        .curriculum-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+
+        .fade-in { opacity: 0; transform: translateY(18px); transition: all 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Preserve sticky nav look */
+        .sticky-nav { position: sticky; top: 0; z-index: 60; backdrop-filter: blur(8px); }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Top Bar (your exact structure) -->
+    <div class="bg-royal-blue text-white py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex space-x-4">
+                <a href="tel:+2348064148820" class="flex items-center text-sm hover:text-gray-200">
+                    <i data-feather="phone" class="w-4 h-4 mr-1"></i> +234 806 414 8820
+                </a>
+                <a href="mailto:noblestarsacademyschool@gmail.com" class="flex items-center text-sm hover:text-gray-200">
+                    <i data-feather="mail" class="w-4 h-4 mr-1"></i> noblestarsacademyschool@gmail.com
+                </a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="text-white hover:text-gray-200"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/noble_stars_academy?igsh=NjRxZnIzd2tmMDZn" class="text-white hover:text-gray-200"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/noble-stars-academy/" class="text-white hover:text-gray-200"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation (your exact structure, 'Academics' marked active) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="nsa.png" alt="Noble Stars Academy Logo" class="h-12 mr-2">
+                <a href="index.html" class="title-font text-2xl font-bold text-royal-blue">Noble Stars Academy</a>
+            </div>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-black font-medium">Home</a>
+                <a href="about.html" class="nav-link text-black font-medium">About Us</a>
+                <a href="academics.html" class="nav-link active-nav text-black font-medium">Academics</a>
+                <a href="vocational.html" class="nav-link text-black font-medium">Vocational</a>
+                <a href="admissions.html" class="nav-link text-black font-medium">Admissions</a>
+                <a href="gallery.html" class="nav-link text-black font-medium">Gallery</a>
+                <a href="contact.html" class="nav-link text-black font-medium">Contact</a>
+                <a href="NSA PORTAL.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Portal</a>
+            </div>
+
+            <button class="md:hidden focus:outline-none text-royal-blue" id="menu-toggle">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full px-4 py-2 shadow-lg" id="mobile-menu">
+            <a href="index.html" class="block py-2 text-black font-medium border-b">Home</a>
+            <a href="about.html" class="block py-2 text-black font-medium border-b">About Us</a>
+            <a href="academics.html" class="block py-2 text-black font-medium border-b">Academics</a>
+            <a href="vocational.html" class="block py-2 text-black font-medium border-b">Vocational</a>
+            <a href="admissions.html" class="block py-2 text-black font-medium border-b">Admissions</a>
+            <a href="gallery.html" class="block py-2 text-black font-medium border-b">Gallery</a>
+            <a href="contact.html" class="block py-2 text-black font-medium border-b">Contact</a>
+            <a href="NSA PORTAL.html" class="block py-2 btn-primary rounded-md text-center font-medium my-2">Portal</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="relative bg-royal-blue text-white py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="heading-font text-3xl md:text-5xl font-bold mb-6 text-white">Academic Excellence</h2>
+            <p class="text-xl max-w-3xl mx-auto">Our comprehensive curriculum is designed to nurture young minds and prepare them for a bright future through innovative teaching methodologies and holistic development.</p>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-4 bg-fuchsia-pink"></div>
+    </section>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- Academic Programs Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="heading-font text-3xl font-bold text-center text-royal-blue mb-12">Our Academic Programs</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Creche Program -->
+                <div class="curriculum-card bg-white rounded-lg shadow-md p-6 fade-in">
+                    <div class="w-16 h-16 rounded-full bg-royal-blue bg-opacity-10 flex items-center justify-center mb-4">
+                        <i data-feather="heart" class="text-royal-blue w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-royal-blue mb-3">Creche Program</h3>
+                    <p class="text-gray-700 mb-4">Our creche program provides a safe, nurturing environment for infants and toddlers aged 6 months to 3 years. We focus on sensory development, early communication skills, and motor skills through carefully designed activities.</p>
+                    <p class="text-gray-700">Our caregivers are trained in early childhood development and maintain a low child-to-caregiver ratio to ensure personalized attention. The environment is sanitized regularly and equipped with age-appropriate learning materials.</p>
+                </div>
+                
+                <!-- Nursery Program -->
+                <div class="curriculum-card bg-white rounded-lg shadow-md p-6 fade-in">
+                    <div class="w-16 h-16 rounded-full bg-fuschia-pink bg-opacity-10 flex items-center justify-center mb-4">
+                        <i data-feather="star" class="text-fuschia-pink w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-fuschia-pink mb-3">Nursery Program</h3>
+                    <p class="text-gray-700 mb-4">Our nursery program serves children aged 3-4 years and introduces structured learning through play-based activities. We focus on developing social skills, language acquisition, creativity, and early numeracy.</p>
+                    <p class="text-gray-700">The curriculum includes circle time, story sessions, arts and crafts, music and movement, and outdoor play. We use thematic units that change monthly to keep children engaged and excited about learning.</p>
+                </div>
+                
+                <!-- Kindergarten Program -->
+                <div class="curriculum-card bg-white rounded-lg shadow-md p-6 fade-in">
+                    <div class="w-16 h-16 rounded-full bg-royal-blue bg-opacity-10 flex items-center justify-center mb-4">
+                        <i data-feather="book-open" class="text-royal-blue w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-royal-blue mb-3">Kindergarten</h3>
+                    <p class="text-gray-700 mb-4">Our kindergarten program for children aged 5-6 years prepares them for primary education through a balanced curriculum that develops literacy, numeracy, scientific thinking, and social studies.</p>
+                    <p class="text-gray-700">We use a phonics-based approach to reading, hands-on mathematics manipulatives, and inquiry-based science activities. Children learn to work independently and in groups, developing critical thinking and problem-solving skills.</p>
+                </div>
+                
+                <!-- Primary Program -->
+                <div class="curriculum-card bg-white rounded-lg shadow-md p-6 fade-in">
+                    <div class="w-16 h-16 rounded-full bg-fuschia-pink bg-opacity-10 flex items-center justify-center mb-4">
+                        <i data-feather="award" class="text-fuschia-pink w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-fuschia-pink mb-3">Primary Education</h3>
+                    <p class="text-gray-700 mb-4">Our primary program (Grades 1-6) follows the Nigerian National Curriculum enhanced with international best practices. We focus on building strong foundations in English, Mathematics, Sciences, Social Studies, and Nigerian Languages.</p>
+                    <p class="text-gray-700">We incorporate technology integration, project-based learning, and critical thinking exercises across all subjects. Our assessment methods are comprehensive, including continuous assessment and end-of-term examinations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Methodology Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="heading-font text-3xl font-bold text-center text-royal-blue mb-12">Our Teaching Methodology</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold text-fuschia-pink mb-6">Child-Centered Approach</h3>
+                    <p class="text-gray-700 mb-4">At Noble Stars Academy, we believe that every child is unique with individual learning styles and paces. Our teachers employ differentiated instruction techniques to cater to diverse learning needs.</p>
+                    <p class="text-gray-700 mb-4">We create learning experiences that are engaging, challenging, and appropriate for each child's developmental level. Our classrooms are designed to encourage exploration, curiosity, and a love for learning.</p>
+                    <p class="text-gray-700">We maintain small class sizes to ensure personalized attention and meaningful teacher-pupil relationships. Our teachers act as facilitators, guiding children to discover knowledge rather than merely transmitting information.</p>
+                </div>
+                
+                <div class="fade-in">
+                    <img src="child.png" alt="Teaching at Noble Stars Academy" class="rounded-lg shadow-md">
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center mt-16">
+                <div class="fade-in order-2 md:order-1">
+                    <img src="tech.png" alt="Technology in Classroom" class="rounded-lg shadow-md">
+                </div>
+                
+                <div class="fade-in order-1 md:order-2">
+                    <h3 class="text-2xl font-bold text-fuschia-pink mb-6">Technology Integration</h3>
+                    <p class="text-gray-700 mb-4">We recognize the importance of technology in modern education. We have started introducing the use of laptops, tablets, and computers to enhance learning experiences.</p>
+                    <p class="text-gray-700 mb-4">pupils learn digital literacy skills from an early age, including responsible use of technology, coding basics, and digital technological tools. We have started employing the use of computer-based tests and online resources to supplement traditional objectives question and answer sheets.</p>
+                    <p class="text-gray-700">Our teachers are begining to receive regular training on integrating technology effectively into lessons. We maintain a balanced approach, ensuring screen time is purposeful and complements hands-on learning activities.</p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center mt-16">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold text-fuschia-pink mb-6">Project-Based Learning</h3>
+                    <p class="text-gray-700 mb-4">We incorporate project-based learning across all grade levels to develop critical thinking, collaboration, and problem-solving skills. pupils work on extended projects that address real-world problems.</p>
+                    <p class="text-gray-700 mb-4">Projects-assignments are interdisciplinary, connecting multiple subject areas and allowing pupils to apply knowledge in meaningful contexts. pupils present their work to authentic audiences, building confidence and communication skills.</p>
+                    <p class="text-gray-700">Our teachers design projects-assignments with clear learning objectives and assessment criteria. pupils receive guidance throughout the process while maintaining ownership of their learning journey.</p>
+                </div>
+                
+                <div class="fade-in">
+                    <img src="project.png" alt="pupils working on project" class="rounded-lg shadow-md">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extracurricular Activities -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="heading-font text-3xl font-bold text-center text-royal-blue mb-4">Extracurricular Activities</h2>
+            <p class="text-center text-gray-700 max-w-3xl mx-auto mb-12">We believe in holistic education that develops the whole child through diverse extracurricular opportunities.</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Sports -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center fade-in">
+                    <div class="activity-icon w-16 h-16 rounded-full bg-royal-blue bg-opacity-10 flex items-center justify-center mb-4 mx-auto">
+                        <i data-feather="activity" class="text-royal-blue w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-royal-blue mb-3">Sports & Athletics</h3>
+                    <p class="text-gray-700">We participte in sports activities from time to time. Our physical education curriculum focuses on developing fundamental movement skills, teamwork, sportsmanship, and healthy habits. The whole school participates in sporting activities every Wednesday Morning.</p>
+                </div>
+                
+                <!-- Arts -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center fade-in">
+                    <div class="activity-icon w-16 h-16 rounded-full bg-fuschia-pink bg-opacity-10 flex items-center justify-center mb-4 mx-auto">
+                        <i data-feather="feather" class="text-fuschia-pink w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-fuschia-pink mb-3">Creative Arts</h3>
+                    <p class="text-gray-700">Our arts program includes visual arts, music, dance, and drama. pupils explore various media and techniques in art classes, learn to act drama, participate in singing activities, dance alongside soul-lifting music, and develop performance skills in drama and dance. We showcase pupil work through end-of-the year programs and some Friday activities.</p>
+                </div>
+                
+                <!-- Clubs -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center fade-in">
+                    <div class="activity-icon w-16 h-16 rounded-full bg-royal-blue bg-opacity-10 flex items-center justify-center mb-4 mx-auto">
+                        <i data-feather="users" class="text-royal-blue w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-royal-blue mb-3">Clubs & Societies</h3>
+                    <p class="text-gray-700">We offer various clubs including Quiz Club, Debate Club, Coding Club, and Environmental Club. These clubs meet every Friday and provide opportunities for pupils to pursue interests beyond the curriculum, develop leadership skills, and collaborate with peers who share similar passions.</p>
+                </div>
+                
+                <!-- Leadership -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center fade-in">
+                    <div class="activity-icon w-16 h-16 rounded-full bg-fuschia-pink bg-opacity-10 flex items-center justify-center mb-4 mx-auto">
+                        <i data-feather="award" class="text-fuschia-pink w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-fuschia-pink mb-3">Leadership Development</h3>
+                    <p class="text-gray-700">We have a pupil government system where elected representatives learn democratic processes and leadership skills. Our prefect system recognizes responsible pupils who serve as role models. We organize leadership courses to develop empathy, responsibility, and civic engagement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment & Evaluation -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="heading-font text-3xl font-bold text-center text-royal-blue mb-12">Assessment & Evaluation</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-lg p-6 fade-in">
+                    <h3 class="text-xl font-bold text-fuschia-pink mb-4">Continuous Assessment</h3>
+                    <p class="text-gray-700">We use ongoing assessment methods including first and second continuous assessment tests, classworks, and assignments/projects. This approach provides regular feedback to pupils and parents about progress and areas for improvement.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-6 fade-in">
+                    <h3 class="text-xl font-bold text-royal-blue mb-4">Terminal Examinations</h3>
+                    <p class="text-gray-700">End-of-term examinations assess cumulative learning and preparedness for advancement to the next level. These are conducted under standardized conditions to ensure fairness and accuracy in evaluation.</p>
+                </div>
+                
+                 <div class="bg-gray-50 rounded-lg p-6 fade-in">
+            <h3 class="text-xl font-bold text-fuschia-pink mb-4">Progress Reporting</h3>
+            <p class="text-black">Detailed progress reports during open day and in pupils' report cards keep parents informed of pupil achievements and next steps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-pink-600 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                Ready to enroll your child?
+            </h2>
+            <p class="mt-4 text-xl text-blue-100 max-w-3xl mx-auto">
+                Give your child the gift of practical skills that will last a lifetime.
+            </p>
+            <div class="mt-10">
+                <a href="admissions.html" class="inline-flex items-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50 transition duration-300 shadow-xl">
+                    <i data-feather="edit" class="mr-2"></i>
+                    Enroll Now
+                </a>
+                <a href="contact.html" class="inline-flex items-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50 transition duration-300 shadow-xl">
+                    <i data-feather="edit" class="mr-2"></i>
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="flex items-center mb-4">
+            <img src="nsa.png" alt="Noble Stars Academy Logo" class="h-10 mr-2">
+            <span class="title-font text-xl font-bold">Noble Stars Academy</span>
+          </div>
+          <p class="mb-4">Soaring to Shine and Reign</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-white hover:text-fuschia-pink"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/noble_stars_academy?igsh=NjRxZnIzd2tmMDZn" class="text-white hover:text-fuschia-pink"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/noble-stars-academy/" class="text-white hover:text-fuschia-pink"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-4 text-fuschia-pink">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-fuschia-pink">Home</a></li>
+            <li><a href="about.html" class="hover:text-fuschia-pink">About Us</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Academics</a></li>
+            <li><a href="vocational.html" class="hover:text-fuschia-pink">Vocational</a></li>
+            <li><a href="admissions.html" class="hover:text-fuschia-pink">Admissions</a></li>
+            <li><a href="contact.html" class="hover:text-fuschia-pink">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-4 text-royal-blue">Programs</h3>
+          <ul class="space-y-2">
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Creche</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Nursery</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Kindergarten</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Primary</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Vocational</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Extracurricular</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-4 text-fuschia-pink">Contact Us</h3>
+          <address class="not-italic">
+            <p class="mb-2 flex items-center">
+              <i data-feather="map-pin" class="w-4 h-4 mr-2"></i> No 33, Adedoyin Way, Beside Old Nitel, Parakin, Ile-Ife, Osun State
+            </p>
+            <p class="mb-2 flex items-center">
+              <i data-feather="phone" class="w-4 h-4 mr-2"></i> +234 806 414 8820
+            </p>
+            <p class="flex items-center">
+              <i data-feather="mail" class="w-4 h-4 mr-2"></i> noblestarsacademyschool@gmail.com
+            </p>
+          </address>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
+        <p>&copy; 2025 Noble Stars Academy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Mobile Menu
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Feather Icons
+    feather.replace();
+
+    // Fade In on Scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    faders.forEach(fader => observer.observe(fader));
+  </script>
+</body>
+</html>

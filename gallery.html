@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Gallery - Noble Stars Academy</title>
+    <meta name="description" content="Capturing moments of excellence, creativity, and joy at Noble Stars Academy">
+    <link rel="icon" type="image/x-icon" href="nsa.png">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS (animations) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Feather icons (single include) -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fredoka+One&display=swap');
+        .font-fredoka { font-family: 'Fredoka One', cursive; }
+    .hover-scale { transition: transform 0.3s ease; }
+    .hover-scale:hover { transform: scale(1.03); }
+    .grid-item { break-inside: avoid; }
+    .lightbox-overlay { background-color: rgba(0, 0, 0, 0.9); z-index: 9999; }
+
+        :root {
+            --royal-blue: #1a237e;   /* your royal-blue */
+            --fuschia-pink: #e91e63; /* your fuschia-pink */
+            --white: #ffffff;
+            --black: #212121;
+        }
+
+        /* Base */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--black);
+            overflow-x: hidden;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+
+        .title-font { font-family: 'Fredoka One', cursive; }
+
+        /* Reused utilities using your variables for consistency */
+        .text-royal-blue { color: var(--royal-blue); }
+        .text-fuschia-pink { color: var(--fuschia-pink); }
+        .bg-royal-blue { background-color: var(--royal-blue); }
+        .bg-fuschia-pink { background-color: var(--fuschia-pink); }
+        .border-royal-blue { border-color: var(--royal-blue); }
+        .border-fuschia-pink { border-color: var(--fuschia-pink); }
+
+        .btn-primary {
+            background-color: var(--royal-blue);
+            color: white;
+            transition: all 0.25s ease;
+        }
+        .btn-primary:hover { background-color: #0d47a1; transform: translateY(-2px); }
+
+        .btn-secondary {
+            background-color: var(--fuschia-pink);
+            color: white;
+            transition: all 0.25s ease;
+        }
+        .btn-secondary:hover { background-color: #c2185b; transform: translateY(-2px); }
+
+        /* Nav underline animation */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -6px;
+            left: 0;
+            background-color: var(--fuschia-pink);
+            transition: width 0.25s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+        /* active - uses royal blue underline in your original */
+        .active-nav::after { width: 100%; background-color: var(--royal-blue); }
+
+        /* Small helpers for visibility */
+        h2, h3 { color: var(--royal-blue); }
+        h3.fuschia { color: var(--fuschia-pink); }
+
+        /* Cards / animations */
+        .curriculum-card { transition: all 0.28s ease; }
+        .curriculum-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+
+        .fade-in { opacity: 0; transform: translateY(18px); transition: all 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Preserve sticky nav look */
+        .sticky-nav { position: sticky; top: 0; z-index: 60; backdrop-filter: blur(8px); }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Top Bar (your exact structure) -->
+    <div class="bg-royal-blue text-white py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex space-x-4">
+                <a href="tel:+2348064148820" class="flex items-center text-sm hover:text-gray-200">
+                    <i data-feather="phone" class="w-4 h-4 mr-1"></i> +234 806 414 8820
+                </a>
+                <a href="mailto:noblestarsacademyschool@gmail.com" class="flex items-center text-sm hover:text-gray-200">
+                    <i data-feather="mail" class="w-4 h-4 mr-1"></i> noblestarsacademyschool@gmail.com
+                </a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="text-white hover:text-gray-200"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/noble_stars_academy?igsh=NjRxZnIzd2tmMDZn" class="text-white hover:text-gray-200"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/noble-stars-academy/" class="text-white hover:text-gray-200"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation (your exact structure, 'Academics' marked active) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="nsa.png" alt="Noble Stars Academy Logo" class="h-12 mr-2">
+                <a href="index.html" class="title-font text-2xl font-bold text-royal-blue">Noble Stars Academy</a>
+            </div>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-black font-medium">Home</a>
+                <a href="about.html" class="nav-link text-black font-medium">About Us</a>
+                <a href="academics.html" class="nav-link text-black font-medium">Academics</a>
+                <a href="vocational.html" class="nav-link text-black font-medium">Vocational</a>
+                <a href="admissions.html" class="nav-link text-black font-medium">Admissions</a>
+                <a href="gallery.html" class="nav-link active-nav text-black font-medium">Gallery</a>
+                <a href="contact.html" class="nav-link text-black font-medium">Contact</a>
+                <a href="NSA PORTAL.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Portal</a>
+            </div>
+
+            <button class="md:hidden focus:outline-none text-royal-blue" id="menu-toggle">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full px-4 py-2 shadow-lg" id="mobile-menu">
+            <a href="index.html" class="block py-2 text-black font-medium border-b">Home</a>
+            <a href="about.html" class="block py-2 text-black font-medium border-b">About Us</a>
+            <a href="academics.html" class="block py-2 text-black font-medium border-b">Academics</a>
+            <a href="vocational.html" class="block py-2 text-black font-medium border-b">Vocational</a>
+            <a href="admissions.html" class="block py-2 text-black font-medium border-b">Admissions</a>
+            <a href="gallery.html" class="block py-2 text-black font-medium border-b">Gallery</a>
+            <a href="contact.html" class="block py-2 text-black font-medium border-b">Contact</a>
+            <a href="NSA PORTAL.html" class="block py-2 btn-primary rounded-md text-center font-medium my-2">Portal</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden h-64 md:h-96 flex items-center justify-center bg-gradient-to-r from-blue-900 to-pink-600">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="font-fredoka text-4xl md:text-6xl text-white mb-4">OUR MEMORIES</h1>
+            <p class="text-white text-lg md:text-xl max-w-2xl mx-auto">Capturing moments of excellence, creativity, and joy at Noble Stars Academy</p>
+        </div>
+    </header>
+
+    
+    <!-- Gallery Filters -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex flex-wrap justify-center gap-2 mb-8">
+            <button class="filter-btn px-4 py-2 rounded-full royal-blue text-white" data-filter="all">All</button>
+            <button class="filter-btn px-4 py-2 rounded-full bg-gray-200" data-filter="sports">Sports</button>
+            <button class="filter-btn px-4 py-2 rounded-full bg-gray-200" data-filter="cultural">Cultural</button>
+            <button class="filter-btn px-4 py-2 rounded-full bg-gray-200" data-filter="classroom">Classrooms</button>
+            <button class="filter-btn px-4 py-2 rounded-full bg-gray-200" data-filter="assembly">Assemblies</button>
+            <button class="filter-btn px-4 py-2 rounded-full bg-gray-200" data-filter="excursion">Excursions</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+            <!-- Sports -->
+            <div class="grid-item relative group hover-scale" data-category="sports">
+                <img src="sport3.jpg" alt="Sports" class="lazy w-full rounded-lg shadow-md">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-lg flex items-center justify-center">
+                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold">Sports Day</span>
+                </div>
+            </div>
+            <div class="grid-item relative group hover-scale" data-category="sports">
+                <img src="sport.jpg" alt="Sports" class="lazy w-full rounded-lg shadow-md">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-lg flex items-center justify-center">
+                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold">Sports Day</span>
+                </div>
+            </div>
+            <div class="grid-item relative group hover-scale" data-category="sports">
+                <img src="sport2.jpg" alt="Sports" class="lazy w-full rounded-lg shadow-md">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-lg flex items-center justify-center">
+                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold">Sports Day</span>
+                </div>
+            </div>
+            <div class="grid-item relative group hover-scale" data-category="sports">
+                <img src="spkinder.jpg" alt="Sports" class="lazy w-full rounded-lg shadow-md">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-lg flex items-center justify-center">
+                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold">Sports Day</span>
+                </div>
+            </div>
+
+            <!-- Cultural -->
+            <div class="grid-item relative group hover-scale" data-category="cultural">
+                <img src="cul2.jpg" alt="Cultural" class="lazy w-full rounded-lg shadow-md">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-lg flex items-center justify-center">
+                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold">Cultural Festival</span>
+                </div>
+            </div>
+            <div class="grid-item relative group hover-scale" data-category="cultural">
+                <img src="cul1.jpg" alt="Cultural" class="lazy w-full rounded-lg shadow-md">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-lg flex items-center justify-center">
+                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold">Cultural Festival</span>
+                </div>
+            </div>
+            <div class="grid-item relative group hover-scale" data-category="cultural">
+                <img src="cul3.jpg" alt="Cultural" class="lazy w-full rounded-lg shadow-md">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-lg flex items-center justify-center">
+                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold">Cultural Festival</span>
+                </div>
+            </div>
+
+            <!-- Classroom -->
+            <div class="grid-item relative group hover-scale" data-category="classroom">
+                <img src="nsa.png" alt="Classroom" class="lazy w-full rounded-lg shadow-md">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-lg flex items-center justify-center">
+                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold">Learning Moments</span>
+                </div>
+            </div>
+
+            <!-- Assembly -->
+            <div class="grid-item relative group hover-scale" data-category="assembly">
+                <img src="ass.PNG" alt="Assembly" class="lazy w-full rounded-lg shadow-md">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-lg flex items-center justify-center">
+                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold">Morning Assembly</span>
+                </div>
+            </div>
+
+            <!-- Excursion -->
+            <div class="grid-item relative group hover-scale" data-category="excursion">
+                <img src="nsa.png" alt="Excursion" class="lazy w-full rounded-lg shadow-md">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-lg flex items-center justify-center">
+                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold">Field Trip</span>
+                </div>
+            </div>
+
+            <!-- More items would be added here -->
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 lightbox-overlay hidden items-center justify-center">
+        <div class="relative max-w-4xl w-full p-4">
+            <button id="close-lightbox" class="absolute -top-12 right-0 text-white text-3xl">&times;</button>
+            <img id="lightbox-img" src="" alt="" class="w-full max-h-screen rounded-lg">
+            <p id="lightbox-caption" class="text-white text-center mt-2"></p>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="bg-fuschia-pink text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Begin the Admission Process?</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-8">Give your child the gift of quality education at Noble Stars Academy</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="admissions.html" class="btn-primary inline-flex items-center justify-center px-8 py-3 rounded-md text-lg font-medium">
+                    <i data-feather="edit" class="mr-2"></i>
+                    Start Application
+                </a>
+                <a href="contact.html" class="bg-white text-pink-600 inline-flex items-center justify-center px-8 py-3 rounded-md text-lg font-medium border border-white hover:bg-fuschia-pink transition duration-300">
+                    <i data-feather="phone" class="mr-2"></i>
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+      <footer class="bg-black text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="flex items-center mb-4">
+            <img src="http://static.photos/education/200x200/1" alt="Noble Stars Academy Logo" class="h-10 mr-2">
+            <span class="title-font text-xl font-bold">Noble Stars Academy</span>
+          </div>
+          <p class="mb-4">Soaring to Shine and Reign</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-white hover:text-fuschia-pink"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/noble_stars_academy?igsh=NjRxZnIzd2tmMDZn" class="text-white hover:text-fuschia-pink"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/noble-stars-academy/" class="text-white hover:text-fuschia-pink"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-4 text-fuschia-pink">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-fuschia-pink">Home</a></li>
+            <li><a href="about.html" class="hover:text-fuschia-pink">About Us</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Academics</a></li>
+            <li><a href="vocational.html" class="hover:text-fuschia-pink">Vocational</a></li>
+            <li><a href="admissions.html" class="hover:text-fuschia-pink">Admissions</a></li>
+            <li><a href="contact.html" class="hover:text-fuschia-pink">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-4 text-royal-blue">Programs</h3>
+          <ul class="space-y-2">
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Creche</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Nursery</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Kindergarten</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Primary</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Vocational</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Extracurricular</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-4 text-fuschia-pink">Contact Us</h3>
+          <address class="not-italic">
+            <p class="mb-2 flex items-center">
+              <i data-feather="map-pin" class="w-4 h-4 mr-2"></i> No 33, Adedoyin Way, Beside Old Nitel, Parakin, Ile-Ife, Osun State
+            </p>
+            <p class="mb-2 flex items-center">
+              <i data-feather="phone" class="w-4 h-4 mr-2"></i> +234 806 414 8820
+            </p>
+            <p class="flex items-center">
+              <i data-feather="mail" class="w-4 h-4 mr-2"></i> noblestarsacademyschool@gmail.com
+            </p>
+          </address>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
+        <p>&copy; 2025 Noble Stars Academy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+    <script>
+        // Mobile Menu
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Fade In on Scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    faders.forEach(fader => observer.observe(fader));
+
+        // Initialize Feather Icons
+        feather.replace();
+        
+        // Initialize LazyLoad
+        var lazyLoadInstance = new LazyLoad({
+            elements_selector: ".lazy"
+        });
+
+        // Gallery Filtering
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                
+                // Update active button
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('royal-blue', 'text-white');
+                    btn.classList.add('bg-gray-200');
+                });
+                
+                if (filter !== 'all') {
+                    this.classList.remove('bg-gray-200');
+                    this.classList.add('royal-blue', 'text-white');
+                } else {
+                    document.querySelector('[data-filter="all"]').classList.add('royal-blue', 'text-white');
+                    document.querySelector('[data-filter="all"]').classList.remove('bg-gray-200');
+                }
+                
+                // Filter items
+                document.querySelectorAll('.grid-item').forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox functionality
+        document.querySelectorAll('.grid-item img').forEach(img => {
+            img.addEventListener('click', function() {
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                const lightboxCaption = document.getElementById('lightbox-caption');
+                
+                lightboxImg.src = this.src;
+                lightboxCaption.textContent = this.alt;
+                lightbox.classList.remove('hidden');
+                lightbox.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        document.getElementById('close-lightbox').addEventListener('click', function() {
+            document.getElementById('lightbox').classList.add('hidden');
+            document.getElementById('lightbox').classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        });
+    </script>
+</body>
+</html>

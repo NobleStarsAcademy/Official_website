@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Admissions - Noble Stars Academy</title>
+    <meta name="description" content="Begin your child's journey to excellence with our simple admission process">
+    <link rel="icon" type="image/x-icon" href="nsa.png">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS (animations) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Feather icons (single include) -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fredoka+One&display=swap');
+
+        :root {
+            --royal-blue: #1a237e;   /* your royal-blue */
+            --fuschia-pink: #e91e63; /* your fuschia-pink */
+            --white: #ffffff;
+            --black: #212121;
+        }
+
+        /* Base */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--black);
+            overflow-x: hidden;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+
+        .title-font { font-family: 'Fredoka One', cursive; }
+
+        /* Reused utilities using your variables for consistency */
+        .text-royal-blue { color: var(--royal-blue); }
+        .text-fuschia-pink { color: var(--fuschia-pink); }
+        .bg-royal-blue { background-color: var(--royal-blue); }
+        .bg-fuschia-pink { background-color: var(--fuschia-pink); }
+        .border-royal-blue { border-color: var(--royal-blue); }
+        .border-fuschia-pink { border-color: var(--fuschia-pink); }
+
+        .btn-primary {
+            background-color: var(--royal-blue);
+            color: white;
+            transition: all 0.25s ease;
+        }
+        .btn-primary:hover { background-color: #0d47a1; transform: translateY(-2px); }
+
+        .btn-secondary {
+            background-color: var(--fuschia-pink);
+            color: white;
+            transition: all 0.25s ease;
+        }
+        .btn-secondary:hover { background-color: #c2185b; transform: translateY(-2px); }
+
+        /* Nav underline animation */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -6px;
+            left: 0;
+            background-color: var(--fuschia-pink);
+            transition: width 0.25s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+        /* active - uses royal blue underline in your original */
+        .active-nav::after { width: 100%; background-color: var(--royal-blue); }
+
+            .payment-upload {
+      border: 2px dashed #d1d5db;
+      transition: all 0.3s ease;
+    }
+    .payment-upload:hover {
+      border-color: var(--royal-blue);
+    }
+
+    .faq-answer { display: none; }
+    .faq-answer.active { display: block; }
+
+        /* Small helpers for visibility */
+        h2, h3 { color: var(--royal-blue); }
+        h3.fuschia { color: var(--fuschia-pink); }
+
+        /* Cards / animations */
+        .curriculum-card { transition: all 0.28s ease; }
+        .curriculum-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+
+        .fade-in { opacity: 0; transform: translateY(18px); transition: all 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Preserve sticky nav look */
+        .sticky-nav { position: sticky; top: 0; z-index: 60; backdrop-filter: blur(8px); }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Top Bar (your exact structure) -->
+    <div class="bg-royal-blue text-white py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex space-x-4">
+                <a href="tel:+2348064148820" class="flex items-center text-sm hover:text-gray-200">
+                    <i data-feather="phone" class="w-4 h-4 mr-1"></i> +234 806 414 8820
+                </a>
+                <a href="mailto:noblestarsacademyschool@gmail.com" class="flex items-center text-sm hover:text-gray-200">
+                    <i data-feather="mail" class="w-4 h-4 mr-1"></i> noblestarsacademyschool@gmail.com
+                </a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="text-white hover:text-gray-200"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/noble_stars_academy?igsh=NjRxZnIzd2tmMDZn" class="text-white hover:text-gray-200"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/noble-stars-academy/" class="text-white hover:text-gray-200"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation (your exact structure, 'Admissions' marked active) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="nsa.png" alt="Noble Stars Academy Logo" class="h-12 mr-2">
+                <a href="index.html" class="title-font text-2xl font-bold text-royal-blue">Noble Stars Academy</a>
+            </div>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-black font-medium">Home</a>
+                <a href="about.html" class="nav-link text-black font-medium">About Us</a>
+                <a href="academics.html" class="nav-link text-black font-medium">Academics</a>
+                <a href="vocational.html" class="nav-link text-black font-medium">Vocational</a>
+                <a href="admissions.html" class="nav-link active-nav text-black font-medium">Admissions</a>
+                <a href="gallery.html" class="nav-link text-black font-medium">Gallery</a>
+                <a href="contact.html" class="nav-link text-black font-medium">Contact</a>
+                <a href="NSA PORTAL.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Portal</a>
+            </div>
+
+            <button class="md:hidden focus:outline-none text-royal-blue" id="menu-toggle">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full px-4 py-2 shadow-lg" id="mobile-menu">
+            <a href="index.html" class="block py-2 text-black font-medium border-b">Home</a>
+            <a href="about.html" class="block py-2 text-black font-medium border-b">About Us</a>
+            <a href="academics.html" class="block py-2 text-black font-medium border-b">Academics</a>
+            <a href="vocational.html" class="block py-2 text-black font-medium border-b">Vocational</a>
+            <a href="admissions.html" class="block py-2 text-black font-medium border-b">Admissions</a>
+            <a href="gallery.html" class="block py-2 text-black font-medium border-b">Gallery</a>
+            <a href="contact.html" class="block py-2 text-black font-medium border-b">Contact</a>
+            <a href="NSA PORTAL.html" class="block py-2 btn-primary rounded-md text-center font-medium my-2">Portal</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-royal-blue text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold font-fredoka mb-6">Welcome to Noble Stars Academy</h1>
+            <p class="text-xl max-w-3xl mx-auto">Begin your child's journey to excellence with our simple admission process</p>
+            <div class="mt-10">
+                <a href="#process" class="btn-secondary inline-flex items-center px-8 py-3 rounded-md text-lg font-medium">
+                    <i data-feather="arrow-down" class="mr-2"></i>
+                    View Admission Process
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+    <!-- Admission Process -->
+    <section id="process" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900">Our <span class="text-royal-blue">Admission Process</span></h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">Simple steps to enroll your child</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="step-card bg-white p-8 rounded-lg shadow-md border-t-4 border-royal-blue">
+                    <div class="flex items-center justify-center w-16 h-16 bg-royal-blue rounded-full mb-6 mx-auto">
+                        <span class="text-2xl font-bold text-royal-blue">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">Complete Inquiry Form</h3>
+                    <p class="text-gray-600 text-center">
+                        Fill out our online inquiry form on the "contact us" page to express interest and receive detailed information about our programs.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card bg-white p-8 rounded-lg shadow-md border-t-4 border-fuschia-pink">
+                    <div class="flex items-center justify-center w-16 h-16 bg-fuschia-pink rounded-full mb-6 mx-auto">
+                        <span class="text-2xl font-bold text-fuschia-pink">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">School Tour & Assessment</h3>
+                    <p class="text-gray-600 text-center">
+                        Schedule a visit to our school and have your child participate in a friendly assessment session.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card bg-white p-8 rounded-lg shadow-md border-t-4 border-royal-blue">
+                    <div class="flex items-center justify-center w-16 h-16 bg-royal-blue rounded-full mb-6 mx-auto">
+                        <span class="text-2xl font-bold text-royal-blue">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">Submit Application</h3>
+                    <p class="text-gray-600 text-center">
+                        Make payment for the school form. Complete the application form and submit required documents along with proof of payment.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment & Form Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-royal-blue p-8 text-white">
+                        <h2 class="text-2xl font-bold mb-6">Admission Requirements</h2>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="flex-shrink-0 mr-3"></i>
+                                <span>Completed application form</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="flex-shrink-0 mr-3"></i>
+                                <span>Birth certificate or sworn declaration of age</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="flex-shrink-0 mr-3"></i>
+                                <span>1 recent passport photograph</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="flex-shrink-0 mr-3"></i>
+                                <span>Formal School report card if applicable</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="flex-shrink-0 mr-3"></i>
+                                <span>Proof of payment of ₦5,000 application fee</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-8 bg-royal-blue p-4 rounded-lg">
+                            <h3 class="font-bold mb-2">Payment Details</h3>
+                            <p class="text-sm">
+                                <span class="font-medium">Bank:</span> Wema Bank<br>
+                                <span class="font-medium">Account Name:</span> Stella Abegunde<br>
+                                <span class="font-medium">Account Number:</span> 0224705716<br>
+                                <span class="font-medium">Amount:</span> ₦5,000
+                            </p>
+                        </div>
+                    </div>
+                <!-- Payment & Form -->
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">Upload Payment Proof</h2>
+        <div id="upload-container" class="payment-upload rounded-lg p-8 text-center cursor-pointer mb-6">
+          <i data-feather="upload" class="w-12 h-12 text-gray-400 mx-auto mb-3"></i>
+          <p class="text-gray-500">Click to upload or drag & drop</p>
+          <p class="text-sm text-gray-400 mt-1">JPEG, PNG or PDF (Max 5MB)</p>
+          <input type="file" id="payment-proof" class="hidden" accept=".jpg,.jpeg,.png,.pdf">
+        </div>
+
+        <div id="file-info" class="hidden bg-green-50 border border-green-200 rounded-lg p-4 mb-6"></div>
+
+        <button id="verify-btn" class="btn-primary w-full py-3 rounded-md font-medium hidden">Verify Payment</button>
+
+        <div id="form-container" class="form-container mt-8 hidden">
+          <a href="https://forms.gle/dzwCwE4RAVQPUrEW8" class="btn-secondary inline-flex items-center justify-center w-full py-3 rounded-md font-medium">
+            <i data-feather="edit-2" class="mr-2"></i>
+            Complete Admission Form
+          </a>
+        </div>
+      </div>
+    </div>
+    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-6 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <div class="border rounded-lg">
+          <button class="faq-question w-full px-6 py-4 flex justify-between items-center">
+            <span>What age can my child start?</span>
+            <i data-feather="chevron-down" class="faq-icon"></i>
+          </button>
+          <div class="faq-answer px-6 py-4">
+            We accept children from 6 months (creche), 2/3 years (nursery), 4/5 years (kindergarten), and 6/7 years (Primary).
+          </div>
+        </div>
+        <div class="border rounded-lg">
+          <button class="faq-question w-full px-6 py-4 flex justify-between items-center">
+            <span>What is the school fee structure?</span>
+            <i data-feather="chevron-down" class="faq-icon"></i>
+          </button>
+          <div class="faq-answer px-6 py-4">
+            Fees vary by class level. Detailed breakdown is shared after inquiry or during school tour.
+          </div>
+        </div>
+        <div class="border rounded-lg">
+          <button class="faq-question w-full px-6 py-4 flex justify-between items-center">
+            <span>What are the school hours?</span>
+            <i data-feather="chevron-down" class="faq-icon"></i>
+          </button>
+          <div class="faq-answer px-6 py-4">
+            Regular school hours are from 8:00AM to 4:00PM on Monday to Thursday; 8:00AM to 2:00PM on Friday. We offer extended care options until 4:30 PM for working parents at an additional cost.
+          </div>
+        </div>
+        <div class="border rounded-lg">
+          <button class="faq-question w-full px-6 py-4 flex justify-between items-center">
+            <span>Does the school provide transportation?</span>
+            <i data-feather="chevron-down" class="faq-icon"></i>
+          </button>
+          <div class="faq-answer px-6 py-4">
+            Yes, we offer safe and reliable transportation services covering most areas in Ile-Ife. Routes and fees are determined based on demand and location.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- CTA Section -->
+    <section class="bg-fuschia-pink text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Begin the Admission Process?</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-8">Give your child the gift of quality education at Noble Stars Academy</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#process" class="btn-primary inline-flex items-center justify-center px-8 py-3 rounded-md text-lg font-medium">
+                    <i data-feather="edit" class="mr-2"></i>
+                    Start Application
+                </a>
+                <a href="contact.html" class="bg-white text-pink-600 inline-flex items-center justify-center px-8 py-3 rounded-md text-lg font-medium border border-white hover:bg-fuschia-pink transition duration-300">
+                    <i data-feather="phone" class="mr-2"></i>
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="flex items-center mb-4">
+            <img src="nsa.png" alt="Noble Stars Academy Logo" class="h-10 mr-2">
+            <span class="title-font text-xl font-bold">Noble Stars Academy</span>
+          </div>
+          <p class="mb-4">Soaring to Shine and Reign</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-white hover:text-fuschia-pink"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/noble_stars_academy?igsh=NjRxZnIzd2tmMDZn" class="text-white hover:text-fuschia-pink"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/noble-stars-academy/" class="text-white hover:text-fuschia-pink"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-4 text-fuschia-pink">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-fuschia-pink">Home</a></li>
+            <li><a href="about.html" class="hover:text-fuschia-pink">About Us</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Academics</a></li>
+            <li><a href="vocational.html" class="hover:text-fuschia-pink">Vocational</a></li>
+            <li><a href="admissions.html" class="hover:text-fuschia-pink">Admissions</a></li>
+            <li><a href="contact.html" class="hover:text-fuschia-pink">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-4 text-royal-blue">Programs</h3>
+          <ul class="space-y-2">
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Creche</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Nursery</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Kindergarten</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Primary</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Vocational</a></li>
+            <li><a href="academics.html" class="hover:text-fuschia-pink">Extracurricular</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-4 text-fuschia-pink">Contact Us</h3>
+          <address class="not-italic">
+            <p class="mb-2 flex items-center">
+              <i data-feather="map-pin" class="w-4 h-4 mr-2"></i> No 33, Adedoyin Way, Beside Old Nitel, Parakin, Ile-Ife, Osun State
+            </p>
+            <p class="mb-2 flex items-center">
+              <i data-feather="phone" class="w-4 h-4 mr-2"></i> +234 806 414 8820
+            </p>
+            <p class="flex items-center">
+              <i data-feather="mail" class="w-4 h-4 mr-2"></i> noblestarsacademyschool@gmail.com
+            </p>
+          </address>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
+        <p>&copy; 2025 Noble Stars Academy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+    <!-- Scripts -->
+  <script>
+    // Mobile Menu
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Feather Icons
+    feather.replace();
+
+    // Fade In on Scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    faders.forEach(fader => observer.observe(fader));
+
+    // Upload handling
+    const uploadContainer = document.getElementById('upload-container');
+    const fileInput = document.getElementById('payment-proof');
+    const fileInfo = document.getElementById('file-info');
+    const verifyBtn = document.getElementById('verify-btn');
+    const formContainer = document.getElementById('form-container');
+
+    uploadContainer.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        fileInfo.innerHTML = `<p class="text-green-800 font-medium">${file.name}</p><p class="text-sm text-green-600">Ready for verification</p>`;
+        fileInfo.classList.remove('hidden');
+        verifyBtn.classList.remove('hidden');
+      }
+    });
+
+    verifyBtn.addEventListener('click', () => {
+      verifyBtn.innerText = "Verifying...";
+      setTimeout(() => {
+        verifyBtn.innerText = "Payment Verified ✅";
+        verifyBtn.disabled = true;
+        formContainer.classList.remove('hidden');
+      }, 2000);
+    });
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        answer.classList.toggle('active');
+        btn.querySelector('.faq-icon').classList.toggle('rotate-180');
+      });
+    });
+  </script>
+</body>
+</html>
